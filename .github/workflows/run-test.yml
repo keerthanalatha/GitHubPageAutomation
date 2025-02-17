@@ -22,5 +22,8 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
+      - name: Install Chrome
+        run: sudo apt-get install -y google-chrome-stable
+
       - name: Run Automation Tests
         run: mvn test  # Change to your test execution command

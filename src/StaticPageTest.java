@@ -17,7 +17,7 @@ public class StaticPageTest {
      @BeforeClass
     public void setUp() {
         // Use Selenium Manager to auto-detect ChromeDriver
-        System.setProperty("webdriver.http.factory", "jdk-http-client");  // Fix for newer Selenium versions
+        // System.setProperty("webdriver.http.factory", "jdk-http-client");  // Fix for newer Selenium versions
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");  // Run in headless mode

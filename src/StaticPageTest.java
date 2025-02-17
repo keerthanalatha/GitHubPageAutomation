@@ -11,12 +11,37 @@ import org.testng.annotations.Test;
 public class StaticPageTest {
     private WebDriver driver;
 
-    @BeforeClass
+     @BeforeClass
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        // Use Selenium Manager to auto-detect ChromeDriver
+        System.setProperty("webdriver.http.factory", "jdk-http-client");  // Fix for newer Selenium versions
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");  // Run in headless mode
+        options.addArguments("--no-sandbox");  // Required in CI environments
+        options.addArguments("--disable-dev-shm-usage");  // Prevents memory crashes
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-gpu"); // Disables GPU acceleration
+        options.addArguments("--window-size=1920,1080"); // Set screen size for screenshots
+
+        // Fix user data directory issue
+        try {
+            Path tempDir = Files.createTempDirectory("chrome-user-data");
+            options.addArguments("--user-data-dir=" + tempDir.toAbsolutePath().toString());
+        } catch (Exception e) {
+            System.out.println("Failed to create a temp user data directory: " + e.getMessage());
+        }
+
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
+
+    // @BeforeClass
+    // public void setUp() {
+    //     WebDriverManager.chromedriver().setup();
+    //     driver = new ChromeDriver();
+    //     driver.manage().window().maximize();
+    // }
 
     @Test
     public void testStaticPage() throws Exception{

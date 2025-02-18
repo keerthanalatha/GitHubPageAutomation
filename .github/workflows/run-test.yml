@@ -27,3 +27,33 @@ jobs:
 
       - name: Run Automation Tests
         run: mvn test  # Change to your test execution command
+
+      - name: Generate HTML Report
+        run: |
+          mkdir -p test-results
+          cp -r target/surefire-reports/* test-results/
+
+      - name: Upload Test Report Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test-Results
+          path: test-results
+
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Test Execution Report - ${{ github.repository }}"
+          to: "recipient@example.com"
+          from: "GitHub Actions <your-email@example.com>"
+          content_type: text/html
+          attachments: test-results/*.xml
+          body: |
+            <h2>Test Results</h2>
+            <p>Find the attached test execution report.</p>
+            <p><strong>Branch:</strong> ${{ github.ref }}</p>
+            <p><strong>Commit:</strong> ${{ github.sha }}</p>
+

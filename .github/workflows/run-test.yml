@@ -47,8 +47,8 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Test Execution Report - ${{ github.repository }}"
-          to: "recipient@example.com"
-          from: "GitHub Actions <your-email@example.com>"
+          to: "keerthana.elango@indegene.com"
+          from: "GitHub Actions <ekeerthana94@gmail.com>"
           content_type: text/html
           attachments: test-results/*.xml
           body: |

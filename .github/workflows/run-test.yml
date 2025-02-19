@@ -36,9 +36,9 @@ jobs:
 
       - name: Copy HTML Report & Screenshots to Test Results
         run: |
-          cp -r test-output/ExtentReport.html test-results/
           mkdir -p test-results/screenshots
-          cp -r screenshots/* test-results/screenshots/
+          cp -r test-output/ExtentReport.html test-results/
+          cp -r test-output/screenshots/* test-results/screenshots/
 
       - name: Create ZIP file with HTML Report and Screenshots
         run: |

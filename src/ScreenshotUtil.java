@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.apache.commons.io.FileUtils;
+import java.io.IOException;
 
 public class ScreenshotUtil {
     public static String captureScreenshot(WebDriver driver, String screenshotName) throws IOException{

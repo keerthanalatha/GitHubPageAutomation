@@ -183,11 +183,11 @@ public class RegistrationTest {
          String timestamp = now.format(formatter);
 
          // Capture Screenshot Before Submission
-         String screenshotPath = ScreenshotUtil.captureScreenshot(driver, "ScreenshotBefore_" + timestamp);
+         String screenshotPath = ScreenshotUtil.captureScreenshot(driver, System.getProperty("user.dir") + "/screenshots/"+"ScreenshotBefore_" + timestamp);
          test.log(Status.INFO, "Captured Screenshot Before Submission")
              .addScreenCaptureFromPath(screenshotPath);
 
-         screenshotPath = ScreenshotUtil.captureScreenshot(driver, "ScreenshotAfter_" + timestamp);
+         screenshotPath = ScreenshotUtil.captureScreenshot(driver, System.getProperty("user.dir") + "/screenshots/" + "ScreenshotAfter_" + timestamp);
          // Fill Registration Form
          driver.findElement(By.id("username")).sendKeys("TestUser");
          driver.findElement(By.id("email")).sendKeys("test@example.com");
@@ -251,7 +251,7 @@ public class RegistrationTest {
         String timestamp = now.format(formatter);
         System.out.println("Current Timestamp: " + timestamp);
         
-        screenshotPath = ScreenshotUtil.captureScreenshot(driver, "ScreenshotCapture_"+timestamp);
+        screenshotPath = ScreenshotUtil.captureScreenshot(driver, System.getProperty("user.dir") + "/screenshots/"+ "ScreenshotCapture_"+timestamp);
         
         // assertEquals("Username must be at least 3 characters long", error.getText());
         if(error.getText().equals("Username must be at least 3 characters long")) {

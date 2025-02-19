@@ -64,7 +64,7 @@ jobs:
           content_type: text/html
           attachments: |
             test-results/test-output/ExtentReport.html
-            test-results/test-output/screenshots.zip
+            test-results/screenshots.zip
           body: |
             Test Results
             Find the attached test execution report.

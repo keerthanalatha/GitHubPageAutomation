@@ -56,7 +56,8 @@ jobs:
           to: "keerthana.elango@indegene.com"
           from: "GitHub Actions <githubActions@example.com>"
           content_type: text/html
-          attachments: test-output/ExtentReport.html
+          attachments: |
+            test-output/ExtentReport.html
             test-results/screenshots.zip
           body: |
             Test Results

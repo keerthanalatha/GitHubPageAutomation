@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
+import java.io.IOException;
 
 
 import com.aventstack.extentreports.ExtentTest;
@@ -168,7 +169,7 @@ public class RegistrationTest {
 
 
      @Test
-     public void testRegistrationForm() {
+     public void testRegistrationForm() throws InterruptedException, IOException {
          String url = "https://keerthanalatha.github.io/nextJSBlog/registration.html";
          driver.get(url);
          test.log(Status.PASS, "Navigated to Registration Page");
@@ -223,7 +224,7 @@ public class RegistrationTest {
      
 
     @Test
-    public void testEmptyUsername() throws InterruptedException {
+    public void testEmptyUsername() throws InterruptedException, IOException {
     	
     	
 //    	driver.findElement(By.id("username")).clear();
@@ -267,7 +268,7 @@ public class RegistrationTest {
     }
     
     @Test
-    public void testInvalidEmail() throws InterruptedException {
+    public void testInvalidEmail() throws InterruptedException, IOException {
 //    	driver.findElement(By.id("username")).clear();
 //        driver.findElement(By.id("email")).clear();
 //        driver.findElement(By.id("password")).clear();
@@ -306,7 +307,7 @@ public class RegistrationTest {
     }
     
     @Test
-    public void testWeakPassword() throws InterruptedException {
+    public void testWeakPassword() throws InterruptedException, IOException {
 //    	driver.findElement(By.id("username")).clear();
 //        driver.findElement(By.id("email")).clear();
 //        driver.findElement(By.id("password")).clear();
@@ -345,7 +346,7 @@ public class RegistrationTest {
     }
     
     @Test
-    public void testInvalidPhoneNumber() throws InterruptedException {
+    public void testInvalidPhoneNumber() throws InterruptedException, IOException {
 //    	driver.findElement(By.id("username")).clear();
 //        driver.findElement(By.id("email")).clear();
 //        driver.findElement(By.id("password")).clear();

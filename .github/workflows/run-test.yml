@@ -25,15 +25,21 @@ jobs:
       - name: Install Chrome
         run: sudo apt-get install -y google-chrome-stable
 
+      - name: Clean Old Screenshots
+        run: rm -rf screenshots/* || true
+
       - name: Run Automation Tests
         run: mvn test  # Change to your test execution command
 
-      - name: Generate HTML Report
+      - name: copy HTML Report
         run: |
           mkdir -p test-results/test-output
-          mkdir -p test-results/screenshots
           cp -r test-output/* test-results/test-output/
-          cp -r screenshots/* test-results/screenshots/
+
+      - name: Copy Screenshots to Test Results
+        run: |
+          mkdir -p test-results/test-output/screenshots
+          cp -r screenshots/* test-results/test-output/screenshots/
 
       - name: Zip Screenshots
         run: |
@@ -57,8 +63,8 @@ jobs:
           from: "GitHub Actions <githubActions@example.com>"
           content_type: text/html
           attachments: |
-            test-output/ExtentReport.html
-            test-results/screenshots.zip
+            test-results/test-output/ExtentReport.html
+            test-results/test-output/screenshots.zip
           body: |
             Test Results
             Find the attached test execution report.

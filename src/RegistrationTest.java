@@ -79,6 +79,7 @@ public class RegistrationTest {
         }
 
         driver = new ChromeDriver(options);
+        driver.manage().window().setSize(new Dimension(1920, 1080)); // Set custom resolution
         driver.manage().window().maximize();
          test = extent.createTest("Registration Page Test");
         test.log(Status.INFO, "Browser Launched");

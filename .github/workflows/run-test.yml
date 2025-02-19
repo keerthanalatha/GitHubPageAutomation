@@ -34,6 +34,10 @@ jobs:
           mkdir -p test-results/screenshots
           cp -r test-output/* test-results/test-output/
           cp -r screenshots/* test-results/screenshots/
+
+      - name: Zip Screenshots
+        run: |
+          zip -r test-results/screenshots.zip screenshots/
           
       - name: Upload Test Report Artifact
         uses: actions/upload-artifact@v4
@@ -52,8 +56,8 @@ jobs:
           to: "keerthana.elango@indegene.com"
           from: "GitHub Actions <githubActions@example.com>"
           content_type: text/html
-          attachments: test-results/*.html
-            screenshots/*.png
+          attachments: test-output/ExtentReport.html
+            test-results/screenshots.zip
           body: |
             Test Results
             Find the attached test execution report.

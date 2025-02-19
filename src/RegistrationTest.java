@@ -38,11 +38,24 @@ public class RegistrationTest {
     String screenshotPath;
 
     
-    /*   @BeforeClass
+      @BeforeClass
     public void setUp() {
 
-     extent = ExtentManager.getInstance();
-         test = ExtentManager.createTest("Registration Page Test");
+
+
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("test-output/ExtentReport.html");
+        sparkReporter.config().setTheme(Theme.STANDARD);
+        sparkReporter.config().setDocumentTitle("Automation Test Report");
+        sparkReporter.config().setReportName("Registration Test Report");
+
+        extent = new ExtentReports();
+        extent.attachReporter(sparkReporter);
+        extent.setSystemInfo("Tester", "Your Name");
+        
+     
+       
+
+    
 
         // Use Selenium Manager to auto-detect ChromeDriver
         System.setProperty("webdriver.http.factory", "jdk-http-client");  // Fix for newer Selenium versions
@@ -66,16 +79,13 @@ public class RegistrationTest {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+         test = extent.createTest("Registration Page Test");
+        test.log(Status.INFO, "Browser Launched");
+       
 
-         test.log(Status.INFO, "Browser Launched");
-
-         if (extent == null) {
-            ExtentSparkReporter spark = new ExtentSparkReporter(new File("./reports/ExtentReport.html"));
-            extent = new ExtentReports();
-            extent.attachReporter(spark);
-        }
+        
             
-    } */
+    } 
 
     
     
@@ -83,7 +93,7 @@ public class RegistrationTest {
     
   
 
-    @BeforeClass
+ /*   @BeforeClass
     public void setUp() {
     	ExtentSparkReporter sparkReporter = new ExtentSparkReporter("test-output/ExtentReport.html");
         sparkReporter.config().setTheme(Theme.STANDARD);
@@ -101,7 +111,7 @@ public class RegistrationTest {
         test.log(Status.INFO, "Browser Launched");
     }
     
-   
+   */
 
 //    @Before
 //    public void setUp() {

@@ -30,9 +30,10 @@ jobs:
 
       - name: Generate HTML Report
         run: |
-          mkdir -p test-results
-          cp -r * test-output/
-          cp -r * screenshots/
+          mkdir -p test-results/test-output
+          mkdir -p test-results/screenshots
+          cp -r test-output/* test-results/test-output/
+          cp -r screenshots/* test-results/screenshots/
           
       - name: Upload Test Report Artifact
         uses: actions/upload-artifact@v4
@@ -49,12 +50,13 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Test Execution Report - ${{ github.repository }}"
           to: "keerthana.elango@indegene.com"
-          from: "GitHub Actions <ekeerthana94@gmail.com>"
+          from: "GitHub Actions <githubActions@example.com>"
           content_type: text/html
           attachments: test-results/*.html
+            screenshots/*.png
           body: |
-            <h2>Test Results</h2>
-            <p>Find the attached test execution report.</p>
-            <p><strong>Branch:</strong> ${{ github.ref }}</p>
-            <p><strong>Commit:</strong> ${{ github.sha }}</p>
+            Test Results
+            Find the attached test execution report.
+            Branch: ${{ github.ref }}
+            Commit: ${{ github.sha }}
 

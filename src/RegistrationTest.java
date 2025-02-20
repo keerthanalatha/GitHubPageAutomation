@@ -126,8 +126,8 @@ public class RegistrationTest {
 //    @Test
 //    public void testRegistrationForm() throws InterruptedException {
 //    	
-////    	 String url = "https://keerthanalatha.github.io/nextJSBlog/index.html"; // Update with actual file path or hosted URL
-//         String url = "https://keerthanalatha.github.io/nextJSBlog/registration.html";
+////    	 String url = "https://keerthanalatha.github.io/GitHubPageDevelopment/registration.html"; // Update with actual file path or hosted URL
+//         String url = "https://keerthanalatha.github.io/GitHubPageDevelopment/registration.html";
 //    	driver.get(url);
 //         test.log(Status.PASS, "Navigated to Pages");
 //         
@@ -172,7 +172,7 @@ public class RegistrationTest {
 
      @Test
      public void testRegistrationForm() throws InterruptedException, IOException {
-         String url = "https://keerthanalatha.github.io/nextJSBlog/registration.html";
+         String url = "https://keerthanalatha.github.io/GitHubPageDevelopment/registration.html";
          driver.get(url);
          test.log(Status.PASS, "Navigated to Registration Page");
 
@@ -235,7 +235,7 @@ public class RegistrationTest {
 //        driver.findElement(By.id("phone")).clear();
 //        driver.findElement(By.id("dob")).clear();
 //        driver.findElement(By.id("gender")).clear();
-    	String url = "https://keerthanalatha.github.io/nextJSBlog/registration.html";
+    	String url = "https://keerthanalatha.github.io/GitHubPageDevelopment/registration.html";
     	driver.navigate().to(url);
     	
     	
@@ -277,7 +277,7 @@ public class RegistrationTest {
 //        driver.findElement(By.id("phone")).clear();
 //        driver.findElement(By.id("dob")).clear();
 //        driver.findElement(By.id("gender")).clear();
-    	String url = "https://keerthanalatha.github.io/nextJSBlog/registration.html";
+    	String url = "https://keerthanalatha.github.io/GitHubPageDevelopment/registration.html";
     	driver.navigate().to(url);
         Thread.sleep(5000);
         driver.findElement(By.id("username")).sendKeys("TestUser");
@@ -316,7 +316,7 @@ public class RegistrationTest {
 //        driver.findElement(By.id("phone")).clear();
 //        driver.findElement(By.id("dob")).clear();
 //        driver.findElement(By.id("gender")).clear();
-    	String url = "https://keerthanalatha.github.io/nextJSBlog/registration.html";
+    	String url = "https://keerthanalatha.github.io/GitHubPageDevelopment/registration.html";
     	driver.navigate().to(url);
         Thread.sleep(5000);
         driver.findElement(By.id("username")).sendKeys("TestUser");
@@ -355,7 +355,7 @@ public class RegistrationTest {
 //        driver.findElement(By.id("phone")).clear();
 //        driver.findElement(By.id("dob")).clear();
 //        driver.findElement(By.id("gender")).clear();
-    	String url = "https://keerthanalatha.github.io/nextJSBlog/registration.html";
+    	String url = "https://keerthanalatha.github.io/GitHubPageDevelopment/registration.html";
     	driver.navigate().to(url);
         Thread.sleep(5000);
         

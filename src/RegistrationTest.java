@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import java.io.IOException;
+import org.openqa.selenium.Dimension;
 
 
 import com.aventstack.extentreports.ExtentTest;
